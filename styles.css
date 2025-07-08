@@ -1,0 +1,398 @@
+/* KYC 登录系统统一样式 - 基于原始signup页面设计 */
+
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 根变量 - 完全基于原始signup页面 */
+:root {
+    /* 主色调 - 基于截图中的深绿色按钮 */
+    --primary-color: #4A5D23;
+    --primary-hover: #3A4A1C;
+
+    /* 文字色 */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-placeholder: #CCCCCC;
+
+    /* 背景色 - 纯白简洁 */
+    --bg-primary: #FFFFFF;
+
+    /* 边框色 - 简单灰色边框 */
+    --border-color: #CCCCCC;
+    --border-focus: #999999;
+
+    /* 错误色 - 红色文字 */
+    --error-color: #FF0000;
+
+    /* 字体 */
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* 基础样式 - 简洁白色背景 */
+body {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 容器 */
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* 认证卡片 - 无阴影，简洁设计 */
+.auth-card {
+    background: var(--bg-primary);
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* Logo - 简洁黑色 */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 4px;
+}
+
+/* 标题区域 - 简洁设计 */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+}
+
+.header p {
+    display: none; /* 隐藏副标题，保持简洁 */
+}
+
+/* 表单样式 - 简洁设计 */
+.auth-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: none; /* 隐藏标签，使用placeholder */
+}
+
+/* 输入框包装器 */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 15px 40px 15px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    background: var(--bg-primary);
+    transition: border-color 0.2s ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+}
+
+.input-wrapper input.error {
+    border-color: var(--error-color);
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* 输入框图标 - 简洁红色图标 */
+.input-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 16px;
+    color: var(--error-color);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 密码切换按钮 */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle:hover {
+    background-color: #f5f5f5;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* 字段消息 - 简洁红色文字 */
+.field-message {
+    margin-top: 8px;
+    font-size: 14px;
+    min-height: 20px;
+    text-align: center;
+}
+
+.field-message.error {
+    color: var(--error-color);
+}
+
+.field-message.success {
+    color: var(--primary-color);
+}
+
+.field-message.info {
+    color: var(--text-secondary);
+}
+
+/* 密码强度指示器 - 隐藏，保持简洁 */
+.password-strength {
+    display: none;
+}
+
+/* 表单选项 - 隐藏复选框，保持简洁 */
+.form-options {
+    display: none;
+}
+
+/* 按钮样式 - 深绿色简洁按钮 */
+.btn-primary {
+    width: 100%;
+    padding: 15px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* 按钮加载状态 */
+.btn-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 全局消息 - 简洁样式 */
+.global-message {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.global-message.error {
+    background-color: #ffebee;
+    color: var(--error-color);
+}
+
+.global-message.success {
+    background-color: #e8f5e8;
+    color: var(--primary-color);
+}
+
+.global-message.info {
+    background-color: #f5f5f5;
+    color: var(--text-secondary);
+}
+
+/* 成功消息样式 - 简洁设计 */
+.success-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #e8f5e8;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.success-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-message h3 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.success-message p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.success-message .note {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* 链接样式 - 简洁设计 */
+.auth-links {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.link-primary {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.link-primary:hover {
+    text-decoration: underline;
+}
+
+.link-secondary {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.link-secondary:hover {
+    text-decoration: underline;
+}
+
+.auth-switch {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    body {
+        padding: var(--spacing-sm);
+    }
+    
+    .auth-card {
+        padding: var(--spacing-lg);
+        max-height: 95vh;
+    }
+    
+    .header h2 {
+        font-size: var(--font-size-base);
+    }
+    
+    .input-wrapper input {
+        padding: 10px 14px;
+        padding-left: 40px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-primary {
+        padding: 10px 20px;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --text-secondary: #000000;
+    }
+}
+
+/* 焦点可见性 */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        background: white;
+    }
+
+    .auth-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

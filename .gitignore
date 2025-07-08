@@ -1,0 +1,58 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.temp
+*.log
+
+# Node.js (if used in future)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Output (if build process added)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Environment Files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache Files
+.cache/
+*.cache
+
+# Backup Files
+*.bak
+*.backup
+
+# Original/Reference Files (keep for reference but don't track changes)
+original_signup.html
+view-source_*.html
+
+# Screenshot/Image Files (optional - uncomment if you don't want to track images)
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+# *.svg
