@@ -36,11 +36,12 @@
             margin-bottom: 40px;
         }
 
-        .logo h1 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #333333;
-            letter-spacing: 4px;
+        .logo img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
         .header {
@@ -170,6 +171,14 @@
             background-color: #00281F;
         }
 
+        .password-rules {
+            font-size: 12px;
+            color: #999999;
+            margin-top: 5px;
+            line-height: 1.4;
+            text-align: left;
+        }
+
         .btn-primary {
             width: 100%;
             padding: 15px;
@@ -234,13 +243,21 @@
             background-color: #e8f5e8;
             color: #00281F;
         }
+
+        .logo-img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Logo -->
         <div class="logo">
-            <h1>KYC</h1>
+            <img src="image 2.png" alt="KYC Logo" class="logo-img">
         </div>
 
         <!-- Header -->
@@ -292,6 +309,9 @@
                         </span>
                     </button>
                 </div>
+                <div class="password-rules">
+                    Password must be at least 8 characters and contain uppercase, lowercase, number, and special character
+                </div>
                 <div class="password-strength" id="passwordStrength" style="display: none;">
                     <div class="strength-bar">
                         <div class="strength-fill" id="strengthFill"></div>
@@ -323,6 +343,9 @@
                             </svg>
                         </span>
                     </button>
+                </div>
+                <div class="password-rules">
+                    Please confirm your password matches the requirements above
                 </div>
                 <div class="field-message" id="confirmPasswordMessage"></div>
             </div>
