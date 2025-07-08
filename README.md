@@ -31,6 +31,37 @@ A modern, responsive login system with unified design across all authentication 
 - Success confirmation with resend option
 - Back to login navigation
 
+## 📋 Form Validation & User Experience
+
+### Native Browser Validation Strategy
+
+This system adopts native browser form validation (such as `required`, `type="email"`) instead of custom red error messages. This approach effectively reduces user resistance to error prompts and avoids the stress caused by red alerts all over the screen.
+
+**Key Benefits:**
+- **Reduced Visual Stress**: No overwhelming red error messages
+- **Better UX**: Browser only shows bubble tooltips for the first invalid field
+- **Cleaner Implementation**: Simpler code without custom validation logic
+- **Consistent Behavior**: Follows browser standards across different platforms
+- **Extensible**: Can be enhanced with custom validation when needed
+
+**Technical Implementation:**
+```html
+<!-- Email validation -->
+<input type="email" required placeholder="Email">
+
+<!-- Password validation -->
+<input type="password" required placeholder="Password">
+
+<!-- Confirm password (handled by JavaScript) -->
+<input type="password" required placeholder="Confirm Password">
+```
+
+The browser automatically handles:
+- Email format validation
+- Required field checking
+- Focus management for invalid fields
+- Accessible error announcements
+
 ## 🎨 Design System
 
 ### Colors
@@ -56,7 +87,6 @@ A modern, responsive login system with unified design across all authentication 
 
 ### Structure
 ```
-├── index.html              # Demo homepage
 ├── login.html              # Login page
 ├── signup.html             # Registration page
 ├── forgot-password.html    # Password reset page
@@ -82,8 +112,8 @@ A modern, responsive login system with unified design across all authentication 
 
 ### Quick Start
 1. Clone the repository
-2. Open `index.html` in your browser to see the demo
-3. Navigate to individual pages to test functionality
+2. Open any HTML file (`login.html`, `signup.html`, or `forgot-password.html`) in your browser
+3. Test the form validation and navigation between pages
 
 ### Development
 1. Each HTML file is self-contained with inline CSS and JavaScript
