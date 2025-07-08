@@ -205,6 +205,26 @@
             background-color: #e8f5e8;
             color: #00281F;
         }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .remember-me label {
+            cursor: pointer;
+            color: #666666;
+            user-select: none;
+        }
     </style>
 </head>
 <body>
@@ -264,6 +284,12 @@
                     </button>
                 </div>
                 <div class="field-message" id="passwordMessage"></div>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember me</label>
             </div>
 
             <!-- Submit Button -->
